@@ -28,7 +28,8 @@
       "version": "0.1.0",
       "dependencies": [
         "flutter",
-        "genui"
+        "genui",
+        "genui_a2a"
       ],
       "devDependencies": [
         "flutter_test"
@@ -50,6 +51,21 @@
         "stream_channel",
         "test_api",
         "vector_math"
+      ]
+    },
+    {
+      "name": "genui_a2a",
+      "version": "0.8.0",
+      "dependencies": [
+        "flutter",
+        "freezed_annotation",
+        "genui",
+        "http",
+        "json_annotation",
+        "json_schema_builder",
+        "logging",
+        "sse_channel",
+        "uuid"
       ]
     },
     {
@@ -82,6 +98,28 @@
         "meta",
         "sky_engine",
         "vector_math"
+      ]
+    },
+    {
+      "name": "dartantic_ai",
+      "version": "3.4.0",
+      "dependencies": [
+        "anthropic_sdk_dart",
+        "collection",
+        "dartantic_interface",
+        "googleai_dart",
+        "html",
+        "http",
+        "logging",
+        "mcp_dart",
+        "meta",
+        "mime",
+        "mistralai_dart",
+        "ollama_dart",
+        "openai_dart",
+        "rxdart",
+        "sse_channel",
+        "uuid"
       ]
     },
     {
@@ -169,6 +207,66 @@
       ]
     },
     {
+      "name": "uuid",
+      "version": "4.5.3",
+      "dependencies": [
+        "crypto",
+        "fixnum"
+      ]
+    },
+    {
+      "name": "sse_channel",
+      "version": "0.2.2",
+      "dependencies": [
+        "async",
+        "http",
+        "logging",
+        "pool",
+        "sse",
+        "stream_channel",
+        "uuid",
+        "web"
+      ]
+    },
+    {
+      "name": "logging",
+      "version": "1.3.0",
+      "dependencies": []
+    },
+    {
+      "name": "json_schema_builder",
+      "version": "0.1.3",
+      "dependencies": [
+        "args",
+        "characters",
+        "collection",
+        "decimal",
+        "email_validator",
+        "http",
+        "intl",
+        "meta"
+      ]
+    },
+    {
+      "name": "http",
+      "version": "1.6.0",
+      "dependencies": [
+        "async",
+        "http_parser",
+        "meta",
+        "web"
+      ]
+    },
+    {
+      "name": "freezed_annotation",
+      "version": "3.1.0",
+      "dependencies": [
+        "collection",
+        "json_annotation",
+        "meta"
+      ]
+    },
+    {
       "name": "video_player_win",
       "version": "3.2.2",
       "dependencies": [
@@ -191,14 +289,6 @@
       ]
     },
     {
-      "name": "uuid",
-      "version": "4.5.3",
-      "dependencies": [
-        "crypto",
-        "fixnum"
-      ]
-    },
-    {
       "name": "url_launcher",
       "version": "6.3.2",
       "dependencies": [
@@ -216,25 +306,6 @@
       "name": "stream_transform",
       "version": "2.1.1",
       "dependencies": []
-    },
-    {
-      "name": "logging",
-      "version": "1.3.0",
-      "dependencies": []
-    },
-    {
-      "name": "json_schema_builder",
-      "version": "0.1.3",
-      "dependencies": [
-        "args",
-        "characters",
-        "collection",
-        "decimal",
-        "email_validator",
-        "http",
-        "intl",
-        "meta"
-      ]
     },
     {
       "name": "intl",
@@ -305,6 +376,91 @@
       "dependencies": []
     },
     {
+      "name": "rxdart",
+      "version": "0.28.0",
+      "dependencies": []
+    },
+    {
+      "name": "openai_dart",
+      "version": "1.4.0",
+      "dependencies": [
+        "http",
+        "logging",
+        "meta",
+        "web_socket"
+      ]
+    },
+    {
+      "name": "ollama_dart",
+      "version": "1.4.1",
+      "dependencies": [
+        "http",
+        "logging",
+        "meta"
+      ]
+    },
+    {
+      "name": "mistralai_dart",
+      "version": "1.3.0",
+      "dependencies": [
+        "http",
+        "logging",
+        "meta"
+      ]
+    },
+    {
+      "name": "mime",
+      "version": "2.0.0",
+      "dependencies": []
+    },
+    {
+      "name": "mcp_dart",
+      "version": "2.1.0",
+      "dependencies": [
+        "http"
+      ]
+    },
+    {
+      "name": "html",
+      "version": "0.15.6",
+      "dependencies": [
+        "csslib",
+        "source_span"
+      ]
+    },
+    {
+      "name": "googleai_dart",
+      "version": "5.1.0",
+      "dependencies": [
+        "collection",
+        "http",
+        "logging",
+        "meta",
+        "web_socket"
+      ]
+    },
+    {
+      "name": "dartantic_interface",
+      "version": "4.0.0",
+      "dependencies": [
+        "genai_primitives",
+        "json_schema_builder",
+        "logging",
+        "meta",
+        "mime",
+        "uuid"
+      ]
+    },
+    {
+      "name": "anthropic_sdk_dart",
+      "version": "1.5.0",
+      "dependencies": [
+        "http",
+        "logging",
+        "meta"
+      ]
+    },
+    {
       "name": "async",
       "version": "2.13.1",
       "dependencies": [
@@ -362,6 +518,72 @@
       ]
     },
     {
+      "name": "fixnum",
+      "version": "1.1.1",
+      "dependencies": []
+    },
+    {
+      "name": "crypto",
+      "version": "3.0.7",
+      "dependencies": [
+        "typed_data"
+      ]
+    },
+    {
+      "name": "web",
+      "version": "1.1.1",
+      "dependencies": []
+    },
+    {
+      "name": "sse",
+      "version": "4.2.0",
+      "dependencies": [
+        "async",
+        "collection",
+        "logging",
+        "pool",
+        "shelf",
+        "stream_channel",
+        "web"
+      ]
+    },
+    {
+      "name": "pool",
+      "version": "1.5.2",
+      "dependencies": [
+        "async",
+        "stack_trace"
+      ]
+    },
+    {
+      "name": "email_validator",
+      "version": "3.0.0",
+      "dependencies": []
+    },
+    {
+      "name": "decimal",
+      "version": "3.2.4",
+      "dependencies": [
+        "intl",
+        "rational"
+      ]
+    },
+    {
+      "name": "args",
+      "version": "2.7.0",
+      "dependencies": []
+    },
+    {
+      "name": "http_parser",
+      "version": "4.1.2",
+      "dependencies": [
+        "collection",
+        "source_span",
+        "string_scanner",
+        "typed_data"
+      ]
+    },
+    {
       "name": "video_player_platform_interface",
       "version": "6.6.0",
       "dependencies": [
@@ -400,26 +622,6 @@
       "dependencies": [
         "flutter",
         "video_player_platform_interface"
-      ]
-    },
-    {
-      "name": "html",
-      "version": "0.15.6",
-      "dependencies": [
-        "csslib",
-        "source_span"
-      ]
-    },
-    {
-      "name": "fixnum",
-      "version": "1.1.1",
-      "dependencies": []
-    },
-    {
-      "name": "crypto",
-      "version": "3.0.7",
-      "dependencies": [
-        "typed_data"
       ]
     },
     {
@@ -479,39 +681,6 @@
         "flutter",
         "url_launcher_platform_interface"
       ]
-    },
-    {
-      "name": "http",
-      "version": "1.6.0",
-      "dependencies": [
-        "async",
-        "http_parser",
-        "meta",
-        "web"
-      ]
-    },
-    {
-      "name": "email_validator",
-      "version": "3.0.0",
-      "dependencies": []
-    },
-    {
-      "name": "decimal",
-      "version": "3.2.4",
-      "dependencies": [
-        "intl",
-        "rational"
-      ]
-    },
-    {
-      "name": "args",
-      "version": "2.7.0",
-      "dependencies": []
-    },
-    {
-      "name": "mime",
-      "version": "2.0.0",
-      "dependencies": []
     },
     {
       "name": "cross_file",
@@ -607,20 +776,10 @@
       ]
     },
     {
-      "name": "vm_service",
-      "version": "15.1.0",
-      "dependencies": []
-    },
-    {
-      "name": "web",
-      "version": "1.1.1",
-      "dependencies": []
-    },
-    {
-      "name": "flutter_web_plugins",
-      "version": "0.0.0",
+      "name": "web_socket",
+      "version": "1.0.1",
       "dependencies": [
-        "flutter"
+        "web"
       ]
     },
     {
@@ -631,6 +790,11 @@
       ]
     },
     {
+      "name": "vm_service",
+      "version": "15.1.0",
+      "dependencies": []
+    },
+    {
       "name": "typed_data",
       "version": "1.4.0",
       "dependencies": [
@@ -638,19 +802,28 @@
       ]
     },
     {
-      "name": "http_parser",
-      "version": "4.1.2",
+      "name": "shelf",
+      "version": "1.4.2",
       "dependencies": [
+        "async",
         "collection",
-        "source_span",
-        "string_scanner",
-        "typed_data"
+        "http_parser",
+        "path",
+        "stack_trace",
+        "stream_channel"
       ]
     },
     {
       "name": "rational",
       "version": "2.2.3",
       "dependencies": []
+    },
+    {
+      "name": "flutter_web_plugins",
+      "version": "0.0.0",
+      "dependencies": [
+        "flutter"
+      ]
     },
     {
       "name": "path_provider_windows",
@@ -821,151 +994,10 @@
       ]
     },
     {
-      "name": "dartantic_ai",
-      "version": "3.4.0",
+      "name": "json_annotation",
+      "version": "4.11.0",
       "dependencies": [
-        "anthropic_sdk_dart",
-        "collection",
-        "dartantic_interface",
-        "googleai_dart",
-        "html",
-        "http",
-        "logging",
-        "mcp_dart",
-        "meta",
-        "mime",
-        "mistralai_dart",
-        "ollama_dart",
-        "openai_dart",
-        "rxdart",
-        "sse_channel",
-        "uuid"
-      ]
-    },
-    {
-      "name": "sse_channel",
-      "version": "0.2.2",
-      "dependencies": [
-        "async",
-        "http",
-        "logging",
-        "pool",
-        "sse",
-        "stream_channel",
-        "uuid",
-        "web"
-      ]
-    },
-    {
-      "name": "rxdart",
-      "version": "0.28.0",
-      "dependencies": []
-    },
-    {
-      "name": "dartantic_interface",
-      "version": "4.0.0",
-      "dependencies": [
-        "genai_primitives",
-        "json_schema_builder",
-        "logging",
-        "meta",
-        "mime",
-        "uuid"
-      ]
-    },
-    {
-      "name": "pool",
-      "version": "1.5.2",
-      "dependencies": [
-        "async",
-        "stack_trace"
-      ]
-    },
-    {
-      "name": "mcp_dart",
-      "version": "2.1.0",
-      "dependencies": [
-        "http"
-      ]
-    },
-    {
-      "name": "googleai_dart",
-      "version": "5.1.0",
-      "dependencies": [
-        "collection",
-        "http",
-        "logging",
-        "meta",
-        "web_socket"
-      ]
-    },
-    {
-      "name": "web_socket",
-      "version": "1.0.1",
-      "dependencies": [
-        "web"
-      ]
-    },
-    {
-      "name": "sse",
-      "version": "4.2.0",
-      "dependencies": [
-        "async",
-        "collection",
-        "logging",
-        "pool",
-        "shelf",
-        "stream_channel",
-        "web"
-      ]
-    },
-    {
-      "name": "mistralai_dart",
-      "version": "1.3.0",
-      "dependencies": [
-        "http",
-        "logging",
         "meta"
-      ]
-    },
-    {
-      "name": "openai_dart",
-      "version": "1.4.0",
-      "dependencies": [
-        "http",
-        "logging",
-        "meta",
-        "web_socket"
-      ]
-    },
-    {
-      "name": "ollama_dart",
-      "version": "1.4.1",
-      "dependencies": [
-        "http",
-        "logging",
-        "meta"
-      ]
-    },
-    {
-      "name": "anthropic_sdk_dart",
-      "version": "1.5.0",
-      "dependencies": [
-        "http",
-        "logging",
-        "meta"
-      ]
-    },
-    {
-      "name": "shelf",
-      "version": "1.4.2",
-      "dependencies": [
-        "async",
-        "collection",
-        "http_parser",
-        "path",
-        "stack_trace",
-        "stream_channel"
       ]
     }
   ],

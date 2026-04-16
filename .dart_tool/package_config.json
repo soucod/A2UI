@@ -182,6 +182,12 @@
       "languageVersion": "3.10"
     },
     {
+      "name": "freezed_annotation",
+      "rootUri": "file:///Users/polina/.pub-cache/hosted/pub.dev/freezed_annotation-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "genai_primitives",
       "rootUri": "file:///Users/polina/.pub-cache/hosted/pub.dev/genai_primitives-0.2.3",
       "packageUri": "lib/",
@@ -190,6 +196,12 @@
     {
       "name": "genui",
       "rootUri": "file:///Users/polina/.pub-cache/hosted/pub.dev/genui-0.8.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.10"
+    },
+    {
+      "name": "genui_a2a",
+      "rootUri": "file:///Users/polina/.pub-cache/hosted/pub.dev/genui_a2a-0.8.0",
       "packageUri": "lib/",
       "languageVersion": "3.10"
     },
@@ -246,6 +258,12 @@
       "rootUri": "file:///Users/polina/.pub-cache/hosted/pub.dev/jni_flutter-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
+    },
+    {
+      "name": "json_annotation",
+      "rootUri": "file:///Users/polina/.pub-cache/hosted/pub.dev/json_annotation-4.11.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.9"
     },
     {
       "name": "json_schema_builder",
