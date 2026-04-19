@@ -5,26 +5,10 @@
 import 'package:flutter/foundation.dart';
 
 const _defaultMessages = [
-  'Reimagining our outdoor architecture...',
-  'Scrubbing grout...',
-  'Scaling palm trees...',
-  'Watering the virtual plants...',
-  'Trimming the digital hedges...',
-  'Reticulating splines...',
-  'Polishing the garden gnomes...',
-  'Sowing the seeds of design...',
-  'Cultivating creativity...',
-  'Designing your dreamscape...',
-  'Fertilizing the pixels...',
-  'Consulting with the garden gnomes...',
-  'Drafting botanical blueprints...',
-  'Aligning the digital sun...',
-  'Sourcing virtual soil...',
-  'Calibrating the sprinklers...',
-  'Unrolling the artificial turf...',
-  'Choosing the perfect pebbles...',
-  'Generating tranquil vibes...',
-  'Harmonizing the elements...',
+  'Finding the best spots for you...',
+  'Checking reviews...',
+  'Looking for open tables...',
+  'Almost there...',
 ];
 
 class LoadingState {

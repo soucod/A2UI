@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:logging/logging.dart';
 
-final appLogger = Logger('VerdureApp');
+final appLogger = Logger('RestaurantFinderApp');
 
 void initLogging() {
   Logger.root.level = Level.ALL;
