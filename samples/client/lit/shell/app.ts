@@ -400,11 +400,13 @@ export class A2UILayoutEditor extends SignalWatcher(LitElement) {
   }
 
   async #sendMessage(message: any): Promise<any[]> {
+    console.log("!!!!! Request to service", message);
     try {
       this.#requesting = true;
       this.#startLoadingAnimation();
-      const response = this.#a2uiClient.send(message);
-      await response;
+      const promise = this.#a2uiClient.send(message);
+      const response = await promise;
+      console.log("!!!!! Response from service", response);
       this.#requesting = false;
       this.#stopLoadingAnimation();
 
