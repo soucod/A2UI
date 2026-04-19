@@ -68,10 +68,14 @@ class Ai {
 
     final surfaceUpdateController = StreamController<String>.broadcast();
 
-    connector.stream.listen((message) {
+    connector.stream.listen((A2uiMessage message) {
       if (message is CreateSurface) {
         surfaceUpdateController.add(message.surfaceId);
       }
+      if (message is UpdateComponents) {
+        surfaceUpdateController.add(message.surfaceId);
+      }
+      throw Exception('!!!!! Unexpected message: ${message.runtimeType}');
     });
 
     // Fetch the agent card to initialize the connection.

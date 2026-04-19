@@ -45,8 +45,9 @@ class _MainAppState extends State<MainApp> {
       themeMode: _themeMode,
       home: RestaurantFinderPage(
         onToggleTheme: () => setState(
-          () => _themeMode =
-              _themeMode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark,
+          () => _themeMode = _themeMode == ThemeMode.dark
+              ? ThemeMode.light
+              : ThemeMode.dark,
         ),
       ),
     );
@@ -109,10 +110,12 @@ class _RestaurantFinderPageState extends State<RestaurantFinderPage> {
   }
 
   Future<void> _send(String text) async {
+    print('!!!!! Sending message: $text');
     if (_aiState == null || text.trim().isEmpty) return;
     // Clear existing surfaces before sending a new request.
-    final List<String> ids =
-        List.of(_aiState!.surfaceController.activeSurfaceIds);
+    final List<String> ids = List.of(
+      _aiState!.surfaceController.activeSurfaceIds,
+    );
     for (final String id in ids) {
       _aiState!.surfaceController.handleMessage(DeleteSurface(surfaceId: id));
     }
@@ -265,15 +268,14 @@ class _RestaurantFinderPageState extends State<RestaurantFinderPage> {
   Widget _buildSurfaces(List<String> surfaceIds) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
-      children:
-          surfaceIds
-              .map(
-                (id) => Surface(
-                  key: ValueKey(id),
-                  surfaceContext: _aiState!.surfaceController.contextFor(id),
-                ),
-              )
-              .toList(),
+      children: surfaceIds
+          .map(
+            (id) => Surface(
+              key: ValueKey(id),
+              surfaceContext: _aiState!.surfaceController.contextFor(id),
+            ),
+          )
+          .toList(),
     );
   }
 
