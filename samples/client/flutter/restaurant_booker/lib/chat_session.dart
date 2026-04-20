@@ -23,7 +23,7 @@ If there is no way to itemize all the options, either use the component '${Basic
   ],
 );
 
-final PromptBuilder _promptBuilder = PromptBuilder.chat(
+final PromptBuilder _promptBuilder = PromptBuilder.custom(
   catalog: _catalog,
   systemPromptFragments: [
     'You are a helpful assistant who chats with a user.',
@@ -35,6 +35,7 @@ final PromptBuilder _promptBuilder = PromptBuilder.chat(
       prefix: PromptBuilder.defaultImportancePrefix,
     ),
   ],
+  allowedOperations: SurfaceOperations.all(dataModel: false),
 );
 
 /// A class that manages the chat session state and logic.
