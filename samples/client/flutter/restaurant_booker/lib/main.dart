@@ -5,13 +5,12 @@
 import 'package:flutter/material.dart';
 import 'package:logging/logging.dart';
 
-import 'ai_client.dart';
+import 'a2a_transport.dart';
 import 'chat_session.dart';
 import 'message.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Configure logging for the app.
   Logger.root.level = Level.ALL;
   Logger.root.onRecord.listen((record) {
     debugPrint('${record.level.name}: ${record.time}: ${record.message}');
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = ColorScheme.fromSeed(seedColor: Colors.blue);
     return MaterialApp(
-      title: 'Simple Chat Controller',
+      title: 'Restaurant Booker',
       theme: ThemeData(colorScheme: colorScheme),
       darkTheme: ThemeData(
         colorScheme: colorScheme.copyWith(brightness: Brightness.dark),
@@ -37,9 +36,7 @@ class MyApp extends StatelessWidget {
 }
 
 class ChatScreen extends StatefulWidget {
-  const ChatScreen({super.key, this.aiClient});
-
-  final AiClient? aiClient;
+  const ChatScreen({super.key});
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();
@@ -54,9 +51,8 @@ class _ChatScreenState extends State<ChatScreen> {
   void initState() {
     super.initState();
     _chatSession = ChatSession(
-      aiClient: widget.aiClient ?? DartanticAiClient(),
+      transport: A2aTransport(agentUrl: 'http://localhost:10002'),
     );
-    // Add a listener to scroll to bottom when messages change.
     _chatSession.addListener(_scrollToBottom);
   }
 
@@ -66,7 +62,7 @@ class _ChatScreenState extends State<ChatScreen> {
       listenable: _chatSession,
       builder: (context, _) {
         return Scaffold(
-          appBar: AppBar(title: const Text('Chat (Controller + Dartantic)')),
+          appBar: AppBar(title: const Text('Restaurant Booker')),
           body: SafeArea(
             child: Column(
               children: [
@@ -76,7 +72,6 @@ class _ChatScreenState extends State<ChatScreen> {
                     itemCount: _chatSession.messages.length,
                     itemBuilder: (context, index) {
                       final Message message = _chatSession.messages[index];
-                      // Pass the controller as the host.
                       return ListTile(
                         title: MessageView(
                           message,

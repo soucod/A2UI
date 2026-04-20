@@ -12,18 +12,18 @@
       "type": "dart"
     },
     {
-      "name": "restaurant booker, Lit renderer",
+      "name": "restaurant finder, Lit renderer",
       "type": "node-terminal",
       "request": "launch",
       "command": "(cd renderers/web_core/ && npm i && npm run build) && (cd renderers/markdown/markdown-it/ && npm i && npm run build) && (cd renderers/lit/ && npm i && npm run build) && (cd samples/client/lit/shell/ && npm i && npm run dev)",
       "cwd": "${workspaceFolder}"
     },
     {
-      "name": "restaurant booker, Python agent",
+      "name": "restaurant finder, Python agent",
       "type": "node-terminal",
       "request": "launch",
       "command": "uv run .",
-      "cwd": "${workspaceFolder}/samples/agent/adk/restaurant_booker",
+      "cwd": "${workspaceFolder}/samples/agent/adk/restaurant_finder",
       "env": {
         "GEMINI_API_KEY": "${env:GEMINI_API_KEY}"
       }

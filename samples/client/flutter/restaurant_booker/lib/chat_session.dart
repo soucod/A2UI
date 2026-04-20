@@ -8,49 +8,23 @@ import 'package:flutter/foundation.dart';
 import 'package:genui/genui.dart';
 import 'package:logging/logging.dart';
 
-import 'ai_client.dart';
-import 'ai_client_transport.dart';
 import 'message.dart';
 
-final Catalog _catalog = BasicCatalogItems.asCatalog(
-  systemPromptFragments: [
-    '''
-When you need additional information from the user, try to use the component '${BasicCatalogItems.choicePicker.name}' to ask for it.
-''',
-    '''
-If there is no way to itemize all the options, either use the component '${BasicCatalogItems.textField.name}' or add option 'Other' to the '${BasicCatalogItems.choicePicker.name}'.
-''',
-  ],
-);
-
-final PromptBuilder _promptBuilder = PromptBuilder.custom(
-  catalog: _catalog,
-  systemPromptFragments: [
-    'You are a helpful assistant who chats with a user.',
-    PromptFragments.acknowledgeUser(),
-    PromptFragments.requireAtLeastOneSubmitElement(
-      prefix: PromptBuilder.defaultImportancePrefix,
-    ),
-    PromptFragments.uiGenerationRestriction(
-      prefix: PromptBuilder.defaultImportancePrefix,
-    ),
-  ],
-  allowedOperations: SurfaceOperations.all(dataModel: false),
-);
+final Catalog _catalog = BasicCatalogItems.asCatalog();
 
 /// A class that manages the chat session state and logic.
 class ChatSession extends ChangeNotifier {
-  ChatSession({required AiClient aiClient}) {
-    _transport = AiClientTransport(aiClient: aiClient);
+  ChatSession({required Transport transport}) {
+    _transport = transport;
     _surfaceController = SurfaceController(catalogs: [_catalog]);
     conversation = Conversation(
       controller: _surfaceController,
       transport: _transport,
     );
-    _init(_catalog);
+    _init();
   }
 
-  late final AiClientTransport _transport;
+  late final Transport _transport;
   late final SurfaceController _surfaceController;
   late final Conversation conversation;
 
@@ -63,11 +37,9 @@ class ChatSession extends ChangeNotifier {
 
   final Logger _logger = Logger('ChatSession');
 
-  void _init(Catalog catalog) {
-    // Listener for Conversation state
+  void _init() {
     conversation.state.addListener(notifyListeners);
 
-    // Listener for Conversation events
     conversation.events.listen((event) {
       switch (event) {
         case ConversationSurfaceAdded(:final surfaceId):
@@ -81,12 +53,9 @@ class ChatSession extends ChangeNotifier {
         case ConversationWaiting():
         case ConversationComponentsUpdated():
         case ConversationSurfaceRemoved():
-          // No-op for now
           break;
       }
     });
-
-    _transport.addSystemMessage(_promptBuilder.systemPromptJoined());
   }
 
   void _addSurfaceMessage(String surfaceId) {
@@ -111,12 +80,9 @@ class ChatSession extends ChangeNotifier {
   Future<void> sendMessage(String text) async {
     if (text.isEmpty) return;
 
-    // Reset current AI message so new response gets a new bubble
     _currentAiMessage = null;
 
     _messages.add(Message(isUser: true, text: 'You: $text'));
-    // Do NOT notify here if we want to wait for "isWaiting" to update?
-    // Actually we want to show user message immediately.
     notifyListeners();
 
     final message = ChatMessage.user(text);
