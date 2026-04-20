@@ -1,4 +1,0 @@
-module audioplayers_darwin {
-header "audioplayers_darwin-Swift.h"
-export *
-}
